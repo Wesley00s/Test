@@ -542,38 +542,40 @@ const handleButtonClick = (actionType) =>
     }
     console.log('Linked list: ')
     userList.print();
+
+    
+    listBox.addEventListener('click', (event) => { 
+        if (event.target.classList.contains('classUserList')) 
+        {
+            const itemBox = event.target.closest('.classUserList');
+            
+            for (let i = 0; i < movies.length; i++)
+            {
+                let url = movies[i].pathFile;
+                let srcSelected = new URL(url, window.location.origin).href;
+                if (srcSelected === itemBox.src)
+                {
+                    src = movies[i].bg;
+                    titleSelected.innerHTML = '';
+                    description.innerHTML = '';
+    
+                    titleSelected.innerHTML = movies[i].completeTitle;
+                    
+                    description.innerHTML = movies[i].desc
+                    yearSelected.innerHTML = movies[i].year;
+                    // console.log(url)
+                    console.log(bgList);
+                    bgList.src = src;  
+                    console.log("Elemento clicado!");
+                    bgList.classList.toggle('bgListAnimation');
+                    boxDesc.classList.toggle('animationBoxDesc');
+                }
+            }
+            
+        }
+    });
 }
 
-listBox.addEventListener('click', (event) => { 
-    if (event.target.classList.contains('classUserList')) 
-    {
-        const itemBox = event.target.closest('.classUserList');
-        
-        for (let i = 0; i < movies.length; i++)
-        {
-            let url = movies[i].pathFile;
-            let srcSelected = new URL(url, window.location.origin).href;
-            if (srcSelected === itemBox.src)
-            {
-                src = movies[i].bg;
-                titleSelected.innerHTML = '';
-                description.innerHTML = '';
-
-                titleSelected.innerHTML = movies[i].completeTitle;
-                
-                description.innerHTML = movies[i].desc
-                yearSelected.innerHTML = movies[i].year;
-                // console.log(url)
-                console.log(bgList);
-                bgList.src = src;  
-                console.log("Elemento clicado!");
-                bgList.classList.toggle('bgListAnimation');
-                boxDesc.classList.toggle('animationBoxDesc');
-            }
-        }
-        
-    }
-});
 
 // btnCancelAddMeio.addEventListener('click', () => { 
 //     input.classList.toggle('hiddenInput');

@@ -12,7 +12,7 @@ const titleSelected = document.querySelector('.titleSelected');
 const yearSelected = document.querySelector('.year');
 const bgList = document.querySelector('.bgList');
 const boxDesc = document.querySelector('.boxDesc');
-            const listBox = document.querySelector('.listBox');
+const listBox = document.querySelector('.listBox');
 
 
 class AddImagesSlider

@@ -544,8 +544,7 @@ const handleButtonClick = (actionType) =>
     userList.print();
 }
 
-
- listBox.addEventListener('click', (event) => { 
+listBox.addEventListener('click', (event) => { 
     if (event.target.classList.contains('classUserList')) 
     {
         const itemBox = event.target.closest('.classUserList');

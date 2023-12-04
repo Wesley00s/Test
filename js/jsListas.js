@@ -458,14 +458,14 @@ const handleButtonClick = (actionType) =>
                     userList.insertEnd(element);
                     insertMethod = 'insertEnd';
                     break;
-                case 'addMeio':
-                    input.classList.toggle('hiddenInput');
-                    btnAddInicio.classList.toggle('hiddenInput');
-                    btnAddFim.classList.toggle('hiddenInput');
-                    btnAddMeio.classList.toggle('hiddenInput');
-                    return;
+               // case 'addMeio':
+                    // input.classList.toggle('hiddenInput');
+                    // btnAddInicio.classList.toggle('hiddenInput');
+                    // btnAddFim.classList.toggle('hiddenInput');
+                    // btnAddMeio.classList.toggle('hiddenInput');
+                    // return;
 
-                    console.log(`Input: ${valueInput.value}`);
+                    // console.log(`Input: ${valueInput.value}`);
                 //     if (valueInput.value !== '') {
                 //         btnConfirmAddMeio.addEventListener('click', () => {
                 //             element = createDynamicElement(index + 1, valueInput[index].pathFile);
@@ -481,7 +481,7 @@ const handleButtonClick = (actionType) =>
                 //         btnAddMeio.classList.toggle('hiddenInput');
                 //     });
                 // }
-                break;
+              //  break;
             default:
                 console.error('Ação não reconhecida.');
                 return;
@@ -542,9 +542,9 @@ const handleButtonClick = (actionType) =>
     }
     console.log('Linked list: ')
     userList.print();
+}
 
-    
-    listBox.addEventListener('click', (event) => { 
+listBox.addEventListener('click', (event) => { 
         if (event.target.classList.contains('classUserList')) 
         {
             const itemBox = event.target.closest('.classUserList');
@@ -574,8 +574,6 @@ const handleButtonClick = (actionType) =>
             
         }
     });
-}
-
 
 // btnCancelAddMeio.addEventListener('click', () => { 
 //     input.classList.toggle('hiddenInput');
@@ -586,7 +584,7 @@ const handleButtonClick = (actionType) =>
 
 btnAddInicio.addEventListener('click', () => handleButtonClick('addInicio'));
 btnAddFim.addEventListener('click', () => handleButtonClick('addFim'));
-btnAddMeio.addEventListener('click', () => handleButtonClick('addMeio'));
+// btnAddMeio.addEventListener('click', () => handleButtonClick('addMeio'));
 
 const handleClick = () => {
     document.querySelector('.menuTitulos').classList.toggle('hiddenSideAvailable');
